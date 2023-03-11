@@ -1,0 +1,39 @@
+import random
+#getting the input variable
+top_of_limit=input("can type any number ?" )
+#checkin the variable is digit are not
+if top_of_limit.isdigit():
+    top_of_limit=int(top_of_limit)
+    
+    if top_of_limit <= 0:
+        print("type higher than 0")
+        quit()
+else:
+    quit()
+
+#using random function
+random_number=random.randint(0,top_of_limit)
+
+
+count=0
+# using While loop
+
+while True:
+    count +=1
+    Make_guess=input("make a guess")
+    if Make_guess.isdigit():
+        Make_guess=int(Make_guess)
+    else:                                           
+        print("please type correct number")
+        continue                              
+    
+    if(Make_guess==random_number):
+        print("your are correct")
+        break
+    elif Make_guess > random_number:
+        print("higher than value")
+    else:
+        print("lower than value")
+
+
+print('you got the value at this number of time',count)
